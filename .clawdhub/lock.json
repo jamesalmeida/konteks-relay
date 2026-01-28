@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "homeassistant": {
+      "version": "1.0.0",
+      "installedAt": 1769492124666
+    },
+    "youtube-summarizer": {
+      "version": "1.0.0",
+      "installedAt": 1769492129102
+    },
+    "prompt-engineering-expert": {
+      "version": "1.0.0",
+      "installedAt": 1769492136048
+    },
+    "youtube-watcher": {
+      "version": "1.0.0",
+      "installedAt": 1769492142618
+    },
+    "humanizer": {
+      "version": "1.0.0",
+      "installedAt": 1769492143565
+    },
+    "search-x": {
+      "version": "1.0.0",
+      "installedAt": 1769492160017
+    },
+    "auto-updater": {
+      "version": "1.0.0",
+      "installedAt": 1769492189655
+    }
+  }
+}
