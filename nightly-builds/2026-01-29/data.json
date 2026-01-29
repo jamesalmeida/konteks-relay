@@ -1,0 +1,180 @@
+{
+  "apps": [
+    {
+      "title": "Konteks — 6 Open PRs",
+      "type": "app",
+      "status": "pr",
+      "meta": "iOS App • PRs: #25, #28, #29, #30, #31, #32",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pulls"
+    },
+    {
+      "title": "PR #32: Interactive Widgets",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • Target setup required",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/32"
+    },
+    {
+      "title": "PR #31: Google Calendar Sync UI",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • Issue #5",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/31"
+    },
+    {
+      "title": "PR #30: Shortcuts Support",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • App Intents • Issue #4",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/30"
+    },
+    {
+      "title": "PR #29: Recurring Tasks",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • Issue #3",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/29"
+    },
+    {
+      "title": "PR #28: Push Notifications",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • Issue #2",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/28"
+    },
+    {
+      "title": "PR #25: Face ID Toggle Fix",
+      "type": "pr",
+      "status": "pr",
+      "meta": "Konteks • Bug fix • Issue #10",
+      "tags": ["konteks"],
+      "url": "https://github.com/jamesalmeida/konteks/pull/25"
+    },
+    {
+      "title": "Mercury Rx — 1 Open PR",
+      "type": "app",
+      "status": "pr",
+      "meta": "iOS App • PR #9: Retrograde Notifications",
+      "tags": ["mercury"],
+      "url": "https://github.com/jamesalmeida/mercuryRx/pulls"
+    },
+    {
+      "title": "Memex Second Brain",
+      "type": "app",
+      "status": "idea",
+      "meta": "Cross-platform • Planning phase",
+      "tags": ["memex"],
+      "url": "https://github.com/jamesalmeida/memex-second-brain"
+    }
+  ],
+  "improvements": [
+    {
+      "title": "stranger-danger skill",
+      "type": "skill",
+      "status": "pr",
+      "meta": "Security • Challenge-response identity verification",
+      "tags": []
+    },
+    {
+      "title": "smart-router skill",
+      "type": "skill",
+      "status": "idea",
+      "meta": "Cost optimization • Auto-route tasks to cheaper models",
+      "tags": []
+    },
+    {
+      "title": "Memory defragmenter",
+      "type": "tool",
+      "status": "idea",
+      "meta": "Workflow • Organize & consolidate memory files",
+      "tags": []
+    },
+    {
+      "title": "Session transcript summarizer",
+      "type": "tool",
+      "status": "idea",
+      "meta": "Workflow • Auto-summarize long sessions",
+      "tags": []
+    },
+    {
+      "title": "Quick-capture CLI",
+      "type": "tool",
+      "status": "idea",
+      "meta": "Workflow • Fast idea capture from anywhere",
+      "tags": []
+    },
+    {
+      "title": "Review @mrnacknack security article",
+      "type": "task",
+      "status": "open",
+      "meta": "Security • Hardening ideas for Clawdbot",
+      "tags": []
+    }
+  ],
+  "videos": [
+    {
+      "title": "Clawdbot Full Setup Guide",
+      "type": "video",
+      "status": "idea",
+      "meta": "YouTube • Tutorial • Getting started with AI agents",
+      "tags": ["video"]
+    },
+    {
+      "title": "Building Custom Skills for AI Agents",
+      "type": "video",
+      "status": "idea",
+      "meta": "YouTube • Advanced • Skill development",
+      "tags": ["video"]
+    },
+    {
+      "title": "My AI Works While I Sleep (Nightly Builds)",
+      "type": "video",
+      "status": "idea",
+      "meta": "YouTube/X • Behind the scenes",
+      "tags": ["video"]
+    },
+    {
+      "title": "AI Home Automation Deep Dive",
+      "type": "video",
+      "status": "idea",
+      "meta": "YouTube • HomeAssistant + Clawdbot",
+      "tags": ["video"]
+    }
+  ],
+  "posts": [
+    {
+      "title": "Give your Clawd a safe word with Stranger-Danger 🚨",
+      "type": "post",
+      "status": "draft",
+      "meta": "X.com • Clawdbot security feature announcement",
+      "tags": ["post"]
+    },
+    {
+      "title": "How I built an AI agent that works while I sleep",
+      "type": "post",
+      "status": "idea",
+      "meta": "X.com • Nightly builds story",
+      "tags": ["post"]
+    },
+    {
+      "title": "My AI has 8 arms 🐙 (and uses all of them)",
+      "type": "post",
+      "status": "idea",
+      "meta": "X.com • Fun intro to Tersono/parallel tasks",
+      "tags": ["post"]
+    },
+    {
+      "title": "Konteks: 6 new features coming soon",
+      "type": "post",
+      "status": "idea",
+      "meta": "X.com • App announcement • Show PR work",
+      "tags": ["post"]
+    }
+  ]
+}
