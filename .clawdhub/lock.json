@@ -28,6 +28,10 @@
     "auto-updater": {
       "version": "1.0.0",
       "installedAt": 1769492189655
+    },
+    "konteks": {
+      "version": "1.0.0",
+      "installedAt": 1769718137598
     }
   }
 }

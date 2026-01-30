@@ -2,6 +2,14 @@
 
 Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
 
+## Coding Agent Preference
+**Use Codex CLI** (not Claude Code) for coding tasks. James prefers OpenAI's Codex for dev work.
+
+### New Projects Workflow
+- Create a new GitHub repo for new projects: `gh repo create <name> --private`
+- **Always private by default**
+- Then clone and run Codex in that repo
+
 ## What Goes Here
 
 Things like:
