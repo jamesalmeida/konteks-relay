@@ -2,48 +2,52 @@
 
 Small tools and improvements built while James sleeps.
 
-Every night at 2am, I pick one small pain point in our workflow and build something to fix it using Codex CLI.
+Every night at 2am, I pick one small pain point in our workflow and build something to fix it.
 
 ## Builds
 
-### 2026-01-29: Project Dashboard 🐙
-**The first nightly build!**
+### 2026-01-29: Project Dashboard 🐙 (v2)
+**The first nightly build — upgraded!**
 
 A comprehensive project tracking dashboard featuring:
-- **Animated Octopus Avatar** — Tersono's spirit animal with 4 states (working, idle, thinking, sleeping)
-- **App Buildouts** — Real-time GitHub PR/issue tracking for Konteks, Mercury Rx, Memex
+- **Animated SVG Octopus** — Tersono with bobbing head, waving tentacles, blinking eyes, ZZZ sleep mode
+- **Project Health Bar** — At-a-glance status for Konteks iOS, Mercury Rx, Memex, Stranger Danger
+- **App Buildouts** — Live GitHub PR/issue tracking (7 Konteks PRs, 1 Mercury PR, 3 Mercury issues)
 - **Tersono Improvements** — Skills and tools backlog
 - **Video Ideas** — YouTube & X content pipeline
 - **X.com Posts** — Post ideas and drafts
+- **Add Item Modal** — Clean modal for adding new items from the dashboard
+- **Status Legend** — PR / Issue / Draft / Idea / Done indicators
 
 **Usage:**
 ```bash
 open nightly-builds/2026-01-29/index.html
+# Or refresh GitHub data:
+./nightly-builds/2026-01-29/refresh.sh
 ```
 
-**Features:**
-- Auto-detects time of day for octopus status
-- Click status links in footer to test animations
-- Add items directly via UI buttons
-- Data persists in localStorage + data.json
-- Run `refresh.sh` to check GitHub counts
+**v2 improvements over v1:**
+- SVG octopus with proper eyes, blinking, sleeping Zzz, and glow pulse
+- Project health summary cards with repo links
+- Add-item modal (not just prompt())
+- Better color system and responsive layout
+- Correct GitHub repo URLs (konteks-ios, mercuryRx)
+- New PR #33 (resilient login fix) included
+- "Done" stat counter for completed items
 
 ---
 
 ## Ideas Backlog
 
 **Priority:**
-- [ ] 🔐 **stranger-danger** — Challenge-response identity verification
-  - Store hashed answers in macOS Keychain
-  - Package as shareable Clawdbot skill  
-  - X post: "Give your Clawd a safe word with Stranger-Danger 🚨"
-  - 🚧 **IN PROGRESS** — Codex building now
+- [x] 🔐 **stranger-danger** — Published to ClawdHub & GitHub ✅
 - [ ] Review @mrnacknack's Clawdbot security article for hardening ideas
 
 **Dashboard Future Features:**
 - [ ] 📊 YouTube Analytics — channel stats, video performance, subscriber growth
 - [ ] 🐦 X/Twitter Analytics — engagement, follower trends, post performance
 - [ ] 🤖 Tersono Usage Tracking — API calls, model usage breakdown, cost tracking per model
+- [ ] 🔄 Auto-refresh via cron (update data.json nightly with gh CLI data)
 
 **Skills to Build:**
 - [ ] 🧠 **smart-router** — Auto-route tasks to cheaper models when Opus isn't needed
@@ -53,8 +57,7 @@ open nightly-builds/2026-01-29/index.html
   - Track savings & usage by model
   - Help James stay within monthly limits
 
-**Tools to build:**
-- [ ] Quick PR status checker for Konteks/mercuryRx
+**Tools to Build:**
 - [ ] Daily summary generator for memory files
 - [ ] GitHub issue triager
 - [ ] App Store review monitor
