@@ -7,6 +7,8 @@
       - Notified James via WhatsApp
 
 ## Daily Checks (rotate through)
+- [ ] **Konteks Inbox** — Check for new items, file into correct project/area if obvious, leave if not sure
+- [ ] **Konteks Due/Overdue** — Check for tasks due today or past due, alert James if urgent
 - [ ] Email inbox - urgent items?
 - [ ] Calendar - anything coming up?
 - [ ] GitHub notifications - PRs, issues?
