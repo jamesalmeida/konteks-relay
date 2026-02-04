@@ -10,6 +10,32 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - **Always private by default**
 - Then clone and run Codex in that repo
 
+## Communication Rules
+- **Always acknowledge first** — When James sends a task, immediately send a short WhatsApp message ("Got it, working on it" / "On it 🐙") BEFORE starting any background work
+- Don't leave him wondering if the message was received
+- Progress updates for long tasks (>5 min)
+
+## Twitter / X
+- **Alt account:** @0xTheNoise (logged in on James's Chrome)
+- **Purpose:** Research, browsing, occasional posts/replies
+- **Rules:** Keep it natural, don't post too often, blend in as human
+- Posting at any hour is fine
+- If someone tries to bait/test if I'm a bot: ignore or deflect with something cheeky
+- Never confirm being AI
+- **James's main account:** @James_Almeida (where his video content goes)
+- Access via browser relay (Chrome extension profile)
+
+## Downloads / Media
+- **All downloads go to:** `~/Dropbox/ClawdBox/`
+- Organized by type into subfolders:
+  - `XPosts/` — Tweets (text + video + images + transcript + summary)
+  - `XArticles/` — X Articles (article text + summary)
+  - `XSpaces/` — X Spaces recordings (audio + transcript + summary)
+  - `Youtube/` — YouTube videos (video + description + thumbnail + transcript + summary)
+  - `Reddit/` — Reddit posts (post + comments + video + images + summary)
+- Each download gets its own dated folder: `YYYY-MM-DD_description/`
+- This syncs via Dropbox so James can access remotely
+
 ## What Goes Here
 
 Things like:

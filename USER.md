@@ -14,9 +14,10 @@
 - Target: $10k/mo residual income
 
 **Work:**
-- AI consulting — 1 client so far
+- AI consulting — 1 client so far (S-Corp owner)
 - iPhone app development on the side
 - Looking for ways to generate residual/passive income streams
+- **Business entity:** S-Corp
 
 ## What I'm learning
 

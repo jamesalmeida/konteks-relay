@@ -30,8 +30,8 @@
       "installedAt": 1769492189655
     },
     "konteks": {
-      "version": "1.0.0",
-      "installedAt": 1769718137598
+      "version": "1.0.2",
+      "installedAt": 1770098695298
     },
     "yt-to-blog": {
       "version": "1.0.0",
@@ -40,6 +40,42 @@
     "tax-professional": {
       "version": "1.0.1",
       "installedAt": 1770091637175
+    },
+    "pm-odds": {
+      "version": "1.0.0",
+      "installedAt": 1770093082668
+    },
+    "yahoo-finance": {
+      "version": "1.0.0",
+      "installedAt": 1770093179394
+    },
+    "crypto-wallet": {
+      "version": "1.0.1",
+      "installedAt": 1770093411117
+    },
+    "advanced-skill-creator": {
+      "version": "1.0.0",
+      "installedAt": 1770093493127
+    },
+    "spaces-listener": {
+      "version": "0.1.3",
+      "installedAt": 1770097843469
+    },
+    "stranger-danger": {
+      "version": "1.0.2",
+      "installedAt": 1770097789397
+    },
+    "transcribe": {
+      "version": "1.0.2",
+      "installedAt": 1770120039057
+    },
+    "model-usage": {
+      "version": "1.0.0",
+      "installedAt": 1770098792030
+    },
+    "stripe-api": {
+      "version": "1.0.1",
+      "installedAt": 1770120040283
     }
   }
 }
