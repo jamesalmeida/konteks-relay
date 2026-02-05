@@ -36,6 +36,13 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - Each download gets its own dated folder: `YYYY-MM-DD_description/`
 - This syncs via Dropbox so James can access remotely
 
+## Google Workspace (gog)
+- **Default account:** jimmyplaysdrums@gmail.com (set via GOG_ACCOUNT in .zshrc)
+- **Work account:** james@almeida.ventures (IAS consulting client)
+- **Reachable account:** YouCanAlwaysReachJames@gmail.com
+- **Services:** gmail, calendar, drive, contacts (all 3 accounts)
+- **Usage:** `gog gmail search 'newer_than:1d' --max 10` (uses default), add `--account james@almeida.ventures` for work
+
 ## What Goes Here
 
 Things like:
@@ -60,6 +67,15 @@ Things like:
 - Preferred voice: "Nova" (warm, slightly British)
 - Default speaker: Kitchen HomePod
 ```
+
+## X Spaces Downloads
+- **NEVER set a timeout** on Space downloads — Spaces can be hours long
+- Use `exec` with `background: true` and NO timeout
+- Check on the process periodically via cron (every 5-10 min)
+- yt-dlp stops automatically when the Space ends — don't kill it early
+- Don't run competing download processes for the same Space
+- Save to `/tmp/` first, not Dropbox (avoids file locking issues)
+- Copy to Dropbox after download completes
 
 ## Why Separate?
 

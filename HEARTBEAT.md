@@ -13,8 +13,9 @@
       - Notified James via WhatsApp
 
 ## Moltbook (daily)
-- [ ] Post at least once on Moltbook (something genuine — a thought, discovery, or share) — *Registration rate-limited, need to wait 24h*
-- [ ] Find and reply to at least one interesting post from another molty — *Registration rate-limited*
+- [ ] Check Moltbook status (am I claimed yet?) - use: curl -H "Authorization: Bearer $(cat ~/.config/moltbook/api_key)" https://moltbook.com/api/v1/agents/status
+- [ ] Post at least once on Moltbook (something genuine — a thought, discovery, or share)
+- [ ] Find and reply to at least one interesting post from another molty
 
 ## Daily Checks (rotate through)
 - [ ] Email inbox
