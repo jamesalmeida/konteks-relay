@@ -4,6 +4,7 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 
 ## Coding Agent Preference
 **Use Codex CLI** (not Claude Code) for coding tasks. James prefers OpenAI's Codex for dev work.
+**Always use Codex for ALL coding** — don't manually edit code files yourself. Only handle git branches, repo management, and non-code tasks directly. If Codex can't do something (git ops outside its workdir), then you can step in.
 
 ### New Projects Workflow
 - Create a new GitHub repo for new projects: `gh repo create <name> --private`
@@ -42,6 +43,12 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - **Reachable account:** YouCanAlwaysReachJames@gmail.com
 - **Services:** gmail, calendar, drive, contacts (all 3 accounts)
 - **Usage:** `gog gmail search 'newer_than:1d' --max 10` (uses default), add `--account james@almeida.ventures` for work
+
+### Important Calendars
+- **Plans (J-Lo)** (`is5gc4u6ck7g7c9iefr15pf04g@group.calendar.google.com`) — Shared family calendar with James & wife (Lauren). Contains logistics both need to see — not all James's tasks, but family awareness items. Check this one first for daily schedule.
+- **Family** — Family events
+- **Routine** — Recurring personal items
+- Note: The `--all` flag can throw errors; query specific calendars directly when needed.
 
 ## What Goes Here
 
@@ -85,14 +92,13 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
-## Git Workflow Rules (CRITICAL)
-1. **NEVER merge to main** unless James specifically asks
-2. **Always work in a new branch** and open a PR
-3. **Don't close issues** - James closes after testing the PR
-4. **Nothing gets merged to main without explicit permission**
-5. When spawning Claude Code for dev work:
-   - `git checkout -b feature/issue-name`
-   - Commit to the branch
-   - `gh pr create`
-   - Do NOT close the issue
-   - Wait for James to review, test, and merge
+## Git Workflow Rules
+### RoadLore (rapid prototyping)
+- **Work directly on main** — no branches, no PRs
+- Codex commits straight to main, James pulls and tests
+- Keep it fast and simple
+
+### Other projects (default)
+1. **Always work in a new branch** and open a PR
+2. **Don't close issues** - James closes after testing the PR
+3. **Nothing gets merged to main without explicit permission**

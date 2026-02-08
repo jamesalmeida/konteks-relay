@@ -17,9 +17,14 @@
 - [ ] Post at least once on Moltbook (something genuine — a thought, discovery, or share)
 - [ ] Find and reply to at least one interesting post from another molty
 
+## Morning Brief (daily, first heartbeat after 7am)
+- [ ] Calendar: unique/non-recurring events for today
+- [ ] Email scan (all 3 accounts — jimmyplaysdrums, james@almeida.ventures, YouCanAlwaysReachJames):
+      - Flag anything that stands out as important
+      - Skip routine notifications (Stripe, shipping, newsletters)
+- [ ] Send brief to James via WhatsApp if anything notable
+
 ## Daily Checks (rotate through)
-- [ ] Email inbox
-- [ ] Calendar
 - [ ] GitHub notifications
 - [ ] Konteks due/overdue items
 
@@ -30,7 +35,9 @@
 - Find ways to grow consulting business
 
 ## Active Codex Jobs (check on these)
-- None right now — all Konteks Web issues complete! 🎉
+- [x] ✅ #116 Fizzy design polish — PR #120 created (Feb 5, 2026 ~5pm)
+      - 24 files, OKLCH tokens, spacing/radius/shadow vars
+      - https://github.com/jamesalmeida/konteks-web/pull/120
 
 ## Business Ideas to Explore
 - Additional revenue streams
@@ -43,3 +50,14 @@
       - Next.js app with dark space theme
       - Kanban board for project tracking
       - Live at http://localhost:3000
+
+## System Updates
+- [x] ✅ Daily Auto-Update Complete (Feb 5, 2026 - 4:00 AM PST)
+      - OpenClaw: v2026.2.2-3 → v2026.2.3-1
+      - Skills: spaces-listener updated to 0.1.4
+      - All systems running smoothly
+- [x] ✅ SSD SURGERY COMPLETE! (Feb 5, 2026 - 2:49 PM PST)
+      - Upgraded internal SSD: 256GB → 2TB (8x increase!)
+      - Module from m4-ssd.com
+      - Before: 99.5% full (1.3 GB free) — After: 7.5% used (1.8 TB free)
+      - James performed the surgery himself 🔧
