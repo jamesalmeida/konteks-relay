@@ -76,6 +76,10 @@
     "stripe-api": {
       "version": "1.0.2",
       "installedAt": 1770392967611
+    },
+    "fastclaw-relay": {
+      "version": "1.0.0",
+      "installedAt": 1770601680273
     }
   }
 }
