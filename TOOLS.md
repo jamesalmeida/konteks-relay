@@ -84,6 +84,14 @@ Things like:
 - Save to `/tmp/` first, not Dropbox (avoids file locking issues)
 - Copy to Dropbox after download completes
 
+## Vercel
+- **Deploy to:** Arkham Ventures team (NOT hobby team)
+- James's projects go under this team
+
+## Domains
+- **All domains on Cloudflare** for DNS management
+- When pointing to Vercel: proxy OFF (grey cloud / DNS only) to avoid SSL conflicts
+
 ## Why Separate?
 
 Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
