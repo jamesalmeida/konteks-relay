@@ -24,6 +24,10 @@
 - **Detailed docs:** `~/dev/actually-useful-ai/docs/` (roadmap, architecture, pricing)
 - **Obsidian docs:** `~/Obsidian-Vault/1 - Projects/FastClaw/`
 - **Workflow:** GitHub issues → Codex → auto-merge to main (rapid iteration mode)
+- **IMPORTANT:** Merging to main deploys to Vercel but does NOT deploy Convex functions. Must run `npx convex deploy --yes` separately (or `CONVEX_DEPLOYMENT=ideal-ferret-88 npx convex deploy --yes` from worktrees)
+- **Admin auth caveat:** Admin page uses client-side password (`planets-mgm-TEMPER`), NOT Convex auth. Don't use `requireAdmin()` in Convex functions called from admin. Issue #29 tracks fixing this.
+- **Vercel env vars:** Must enable Preview checkbox for `NEXT_PUBLIC_CONVEX_URL` — otherwise preview branch deploys fail
+- **Open issues:** #26 (system theme default), #29 (secure admin with Convex auth)
 
 ### FastClaw iOS App (PAUSED)
 - **Repo:** `jamesalmeida/fastclaw` (local: `~/dev/fastclaw`)
