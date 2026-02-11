@@ -6,13 +6,24 @@
 - **What:** Managed AI assistant hosting for non-techies. "Your Own AI Assistant in 60 Seconds."
 - **Domain:** actually-useful-ai.com (primary), fastclaw.app (secondary)
 - **Repo:** `jamesalmeida/actually-useful-ai` (local: `~/dev/actually-useful-ai`)
+- **Docker repo:** `jamesalmeida/fastclaw-gateway` (PUBLIC, local: `~/dev/fastclaw-gateway`)
 - **Stack:** Next.js 15, Tailwind, Convex (auth + data), Vercel (Arkham Ventures team)
 - **Convex:** dev `elated-gecko-980`, prod `ideal-ferret-88`
 - **Auth:** Convex Auth (Google OAuth + email/password) — working
-- **Pricing:** BYOK $9/mo, Pro $29/mo (Kimi K2 included), Premium $59/mo (coming soon)
-- **Status (Feb 9):** Marketing site + auth done. Next: Stripe → Docker → Railway → channel onboarding
+- **Pricing:** Basic $9/mo (BYOK), Pro $29/mo (1-day free trial, Kimi K2 included), Premium $59/mo (coming soon)
+- **Stripe:** Integrated! Checkout with Link, webhooks, billing portal. Sandbox: "Violet Beam"
+- **Status (Feb 10):** **Phases 1-5 COMPLETE** — end-to-end working! Sign up → Stripe → Railway provisioning → live instance
+- **Next:** Phase 6 — Channel onboarding (WhatsApp QR, Telegram, web chat)
+- **Key architecture:** Loopback + reverse proxy to bypass OpenClaw device pairing. Gateway on 127.0.0.1:18789, http-proxy on :8080 strips headers. Railway sees local connections.
+- **Docker image:** ghcr.io/jamesalmeida/fastclaw-gateway:latest (multi-arch, PUBLIC on GHCR)
+- **Railway API token:** c04dd483-d28e-460d-bdf4-7452d4a5f13a (stored in Vercel env vars)
+- **Default AI model:** Kimi K2 (all tiers currently)
+- **SEO:** Added OpenClaw/ClawdBot keywords, FAQ section, comparison section
+- **Social proof toast:** Fake purchase notifications, toggle via /admin (pw: planets-mgm-TEMPER)
+- **Competitor:** openclaw.new — selling hosted OpenClaw, ranks high for "openclaw" searches
 - **Detailed docs:** `~/dev/actually-useful-ai/docs/` (roadmap, architecture, pricing)
 - **Obsidian docs:** `~/Obsidian-Vault/1 - Projects/FastClaw/`
+- **Workflow:** GitHub issues → Codex → auto-merge to main (rapid iteration mode)
 
 ### FastClaw iOS App (PAUSED)
 - **Repo:** `jamesalmeida/fastclaw` (local: `~/dev/fastclaw`)
@@ -24,8 +35,10 @@
 - **Client:** IAS (International Assembly Solutions)
 - **S-Corp:** james@almeida.ventures
 - **Key contacts:** Cam Stapelfeld (Oracle/NetSuite), Abdo Sauma, Jason Buist
-- **Current:** Oracle NetSuite migration, BPR process
-- **AFC subsidiary** needs separate GL in NetSuite
+- **Current:** Oracle NetSuite migration — fixed-bid SOW ready, need 1-hour review call with Jason+Abdo
+- **AFC subsidiary** — handled natively in NetSuite (parent-child hierarchy, inter-company transactions)
+- **Next step:** Email sent (draft in almeida.ventures) to schedule SOW review meeting
+- **Obsidian notes:** `1 - Projects/IAS Consulting/2026-02-10 Cam Stapelfeld Call Notes.md`
 
 ### Konteks
 - **Web repo:** `jamesalmeida/konteks-web`
