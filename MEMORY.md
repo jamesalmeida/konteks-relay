@@ -12,8 +12,10 @@
 - **Auth:** Convex Auth (Google OAuth + email/password) — working
 - **Pricing:** Basic $9/mo (BYOK), Pro $29/mo (1-day free trial, Kimi K2 included), Premium $59/mo (coming soon)
 - **Stripe:** Integrated! Checkout with Link, webhooks, billing portal. Sandbox: "Violet Beam"
-- **Status (Feb 10):** **Phases 1-5 COMPLETE** — end-to-end working! Sign up → Stripe → Railway provisioning → live instance
+- **Status (Feb 12):** **Phases 1-5 COMPLETE + major polish** — 11 issues closed in one day
+- **Working flow:** Sign up → Stripe checkout (1-day trial for Pro) → Railway auto-provision → Dashboard shows token → One-click open AI assistant
 - **Next:** Phase 6 — Channel onboarding (WhatsApp QR, Telegram, web chat)
+- **Recent fixes (Feb 12):** Unique Railway domains per user, tier upgrade via subscription update (not new checkout), cancellation display, delete account flow, email normalization, Google OAuth email storage, PORT conflict fix
 - **Key architecture:** Loopback + reverse proxy to bypass OpenClaw device pairing. Gateway on 127.0.0.1:18789, http-proxy on :8080 strips headers. Railway sees local connections.
 - **Docker image:** ghcr.io/jamesalmeida/fastclaw-gateway:latest (multi-arch, PUBLIC on GHCR)
 - **Railway API token:** c04dd483-d28e-460d-bdf4-7452d4a5f13a (stored in Vercel env vars)
@@ -27,7 +29,7 @@
 - **IMPORTANT:** Merging to main deploys to Vercel but does NOT deploy Convex functions. Must run `npx convex deploy --yes` separately (or `CONVEX_DEPLOYMENT=ideal-ferret-88 npx convex deploy --yes` from worktrees)
 - **Admin auth caveat:** Admin page uses client-side password (`planets-mgm-TEMPER`), NOT Convex auth. Don't use `requireAdmin()` in Convex functions called from admin. Issue #29 tracks fixing this.
 - **Vercel env vars:** Must enable Preview checkbox for `NEXT_PUBLIC_CONVEX_URL` — otherwise preview branch deploys fail
-- **Open issues:** #26 (system theme default), #29 (secure admin with Convex auth)
+- **Open issues:** #29 (secure admin), #20 (support email), #19/#39 (Google OAuth for customers), #13 (logos), #12 (scarcity meter), #10 (Phase 6 channels), #6/#5 (social proof)
 
 ### FastClaw iOS App (PAUSED)
 - **Repo:** `jamesalmeida/fastclaw` (local: `~/dev/fastclaw`)
