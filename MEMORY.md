@@ -24,7 +24,7 @@
 - **Social proof toast:** Fake purchase notifications, toggle via /admin (pw: planets-mgm-TEMPER)
 - **Competitor:** openclaw.new — selling hosted OpenClaw, ranks high for "openclaw" searches
 - **Detailed docs:** `~/dev/actually-useful-ai/docs/` (roadmap, architecture, pricing)
-- **Obsidian docs:** `~/Obsidian-Vault/1 - Projects/FastClaw/`
+- **Obsidian docs:** `~/Obsidian-Vault/1 - Projects/actually-useful-ai.com/`
 - **Workflow:** GitHub issues → Codex → auto-merge to main (rapid iteration mode)
 - **IMPORTANT:** Merging to main deploys to Vercel but does NOT deploy Convex functions. Must run `npx convex deploy --yes` separately (or `CONVEX_DEPLOYMENT=ideal-ferret-88 npx convex deploy --yes` from worktrees)
 - **Admin auth caveat:** Admin page uses client-side password (`planets-mgm-TEMPER`), NOT Convex auth. Don't use `requireAdmin()` in Convex functions called from admin. Issue #29 tracks fixing this.
