@@ -80,6 +80,10 @@
     "fastclaw-relay": {
       "version": "1.0.0",
       "installedAt": 1770601680273
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1771083136268
     }
   }
 }
