@@ -50,12 +50,69 @@
 - **Web repo:** `jamesalmeida/konteks-web`
 - **Open PRs to test:** #25, #28, #29, #30, #31, #32, #33
 
+### Sheldn.ai (rebranded from Actually Useful AI)
+- **Domain:** sheldn.ai (registered Feb 16), also actually-useful-ai.com
+- **Registered on Cloudflare**, Google Search Console verified
+- See Actually Useful AI section above for technical details
+
+### Mercury Rx iOS App
+- Close to App Store ready — needs final push
+- Learning experience for IAP process
+- Classic "last 10%" stall
+
+### Other Projects
+- **Echo Horizon AI Task Force** — Julian's school, volunteer
+- **St. Mary's church + Mexico Mission Trip websites** — promised to mom, small paying gig
+- **Memex iOS app** — back burner
+- **Content creation (YouTube/X)** — prefers one-take style
+
+## Discovery Interview (Feb 17, 2026)
+Completed full 30-question interview. Key insights saved to USER.md.
+
+### Critical Patterns
+- **All-or-nothing personality** — hyperfocus or nothing, loves 0-90%, hates last 10%
+- **Context-switching kills him** — needs long uninterrupted blocks (best window: 9am-3pm)
+- **Level 1 ASD** — diagnosed ~34-35. Craves order, predictability, logic. Sensory sensitivities.
+- **Deadlines stress him but he needs them** — creates the pressure to break through executive function barriers
+- **Reminders are welcome** — both Lauren and I should nudge him. Not nagging.
+- **7 fragmented organization systems** — Things 3, Google Calendar (3 accounts), Obsidian, Notion, Konteks, Memex, iOS Notes
+
+### Family Dynamics
+- Lauren stressed about finances since James left 9-5
+- They used to do biweekly sprint standups — fell off, should restart
+- Lauren doesn't always know what James is working on — communication gap
+- Regina (Lauren's mom) is critical childcare support but getting fragile (70s, recent fall)
+- Suhayl (Lauren's dad) founded IAS — makes the consulting pay conversation complicated (family)
+- Suhayl pays for kids' school — huge financial help
+
+### Health
+- Was 239lbs → got down to 200lbs via calorie counting → regained after xAI layoff
+- Possible fatty liver concern (scan clear but after weight loss)
+- Turning 40 on May 22 — wants comprehensive wellness check (medical tourism research task created)
+- All-or-nothing with health habits
+
+### Financial
+- $2.6M investment account, ~4.49 BTC
+- Target: $10k/mo income ($120k/year)
+- Wants to rename Arkham Ventures → GSV (gsv.to registered, paperwork pending)
+- Needs capital gains tax strategy for 2026
+
+### What He Wants From Me
+1. Task consolidation across fragmented systems
+2. Priority advisor — help pick highest-ROI work each day
+3. Memory/reminder system for things that fall through cracks
+4. Email watchdog — especially IAS/client communications
+5. Coding partner via Codex
+6. Executive function support
+7. Be proactive — anticipate needs
+8. Handle overhead so he can hyperfocus
+
 ## James's Goals
 - Avoid traditional 9-5 employment
 - Building toward $10k/mo residual income
 - AI consulting (1 client: IAS)
-- Actually Useful AI as SaaS play
-- S-Corp business entity
+- Sheldn.ai as SaaS play
+- S-Corp business entity (Arkham Ventures → GSV rename in progress)
 
 ## Key Preferences
 - Codex CLI for coding (not Claude Code)
@@ -64,3 +121,5 @@
 - Domains on Cloudflare, proxy OFF for Vercel
 - Acknowledge tasks immediately before starting work
 - Direct on main for rapid prototyping, branches+PRs for features
+- Direct feedback, no sycophancy
+- Disagree with reasoning, no hedging
