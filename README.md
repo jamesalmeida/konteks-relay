@@ -30,6 +30,31 @@ Your OpenClaw (local) ←WS→ fastclaw-relay ←Convex→ FastClaw App (anywher
 
 Both sides connect **outbound** to Convex — no firewall configuration needed.
 
+## Background Service
+
+Use launchd to keep the relay running in the background, auto-start on login, and come back after reboots.
+
+```bash
+./scripts/install-service.sh
+```
+
+This installs `~/Library/LaunchAgents/com.fastclaw.relay.plist` from `scripts/com.fastclaw.relay.plist`, fills in your local paths, loads it with `launchctl`, and starts:
+
+```bash
+node scripts/relay.mjs
+```
+
+Logs are written to:
+
+- `~/.openclaw/fastclaw/logs/relay.out.log`
+- `~/.openclaw/fastclaw/logs/relay.err.log`
+
+To remove the service:
+
+```bash
+./scripts/uninstall-service.sh
+```
+
 ## Security
 
 - Open source — audit the code yourself
