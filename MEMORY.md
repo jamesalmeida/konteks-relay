@@ -1,5 +1,15 @@
 # MEMORY.md — Long-Term Memory
 
+## Mission Statement
+> **Build sustainable income streams that free James from the 9-to-5 trap — by shipping real products, not just starting them.**
+
+- IAS consulting pays the bills now — protect and grow it
+- Sheldn.ai is the residual income play — get it to paying customers
+- Tersono handles the overhead so James can hyperfocus on building
+- We finish things — the last 10% is where the money is
+- North star: **$10k/month so Lauren has options**
+- Everything we do should ladder up to that or get cut
+
 ## Active Projects
 
 ### Actually Useful AI (formerly FastClaw)
