@@ -60,6 +60,45 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+### Home Automation Setup
+- **Pi 5 16GB** — Running Home Assistant OS 17.1 at `192.168.184.150`
+  - HA token stored in `HA_TOKEN` env var
+  - Lutron Caséta lights/switches auto-discovered and working
+  - Ecobee thermostat — needs HomeKit Device integration (ecobee API keys discontinued)
+  - Still need to add: Apple TV, Samsung TV, SwitchBot, Plex
+- **Pi 5 8GB** — Spare, unused
+- **Pi 3 Model B** — Old Homebridge box at `192.168.184.3` (retired)
+- **Hailo AI HAT** — Unused, for Frigate camera detection (Phase 2)
+- **Old Mac mini (FOR SALE)** — Late 2014, Macmini7,1, Dual-Core Intel i5 2.6GHz, 8GB RAM, 960GB SSD internal (2.5" SATA), Serial: C07N90MMG1HW. Currently Plex server, being replaced by M4 Mini. Wipe and sell with drive intact.
+- **M4 Mac mini 16GB** — Incoming replacement: Plex + dedicated OpenClaw house agent (Kimi K2.5, own Discord bot on #wagner-st)
+
+### Hardware Inventory
+- **MacBook Pro 16" (2023)** — M2 Max, 64GB RAM, macOS Tahoe 26.2, Serial: R43450HX3R. Displays: built-in 16" XDR + 15.4" Apple Color LCD + 32" Apple Pro Display XDR. James's daily driver.
+- **Tersono-MacMini (M4, 2024)** — M4, 32GB RAM, 2TB internal (upgraded from 256GB), macOS Tahoe 26.2, Serial: Q9FCVG75M2. Display: 30.5" 1080p. In the garage, wearing a 3D-printed lobster body 🦀. Runs OpenClaw (Tersono).
+- **Mac mini (M4, 2024)** — 16GB RAM, 256GB internal (upgrading to 1TB NVMe). Incoming Plex server + OpenClaw house agent (Wagner).
+- **Mac mini (Late 2014, FOR SALE)** — Macmini7,1, Dual-Core Intel i5 2.6GHz, 8GB RAM, 960GB SSD internal (SanDisk Ultra II, 2.5" SATA), Serial: C07N90MMG1HW. Current Plex server, being replaced by M4.
+- **Pi 5 16GB** — Running Home Assistant OS 17.1 at 192.168.184.150
+- **Pi 5 8GB** — Spare, unused
+- **Pi 3 Model B Rev 1.2** — Old Homebridge at 192.168.184.3 (retired)
+- **Hailo AI HAT (Pi 5)** — Unused, for Frigate camera detection (Phase 2)
+- **20TB RAID** — External USB, Plex media (~5TB used)
+- **5TB External** — Partitioned: 4.5TB FileStorage + 500GB Time Machine
+
+## Things 3
+- Auth token set in `THINGS_AUTH_TOKEN` env var (~/.zshrc)
+- DB path: `~/Library/Group Containers/JLMPQHK86H.com.culturedcode.ThingsMac/ThingsData-IM2PY`
+- **DB reads: WORKING** — Full Disk Access granted to OpenClaw.app (Feb 19, 2026)
+- **Write ops (URL scheme) pop up UI dialogs** — avoid running `things add/update` unless James explicitly asks, since it opens Things and shows auth prompts on screen
+- **Default task manager** — Use Things 3 for all task creation/management (not Konteks) until further notice
+- **Projects:** Finance (in Recurring area), Mercury Rx Launch
+- **Areas:** Notes, Recurring
+
+## Core Productivity Stack (Feb 19, 2026)
+- **Google Calendar** (3 accounts) — schedule/events
+- **Things 3** — all tasks
+- **Obsidian** — all notes (vault: `~/Obsidian-Vault/`, PARA structure)
+- No more Notion, Konteks, Memex, or iOS Notes for task/note management
+
 ## Examples
 
 ```markdown

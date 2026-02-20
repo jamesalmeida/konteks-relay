@@ -23,16 +23,22 @@
 - [ ] Post at least once on Moltbook (something genuine — a thought, discovery, or share)
 - [ ] Find and reply to at least one interesting post from another molty
 
+## Email Watch (EVERY heartbeat — James requested this)
+- [ ] Email scan (all 3 accounts — jimmyplaysdrums, james@almeida.ventures, YouCanAlwaysReachJames):
+      - Flag anything that stands out as important
+      - **Especially IAS and client communications**
+      - Skip routine notifications (Stripe, shipping, newsletters, marketing)
+- [ ] If anything important found → ping James on WhatsApp immediately
+
 ## Morning Brief (daily, first heartbeat after 7am)
 - [x] ✅ Feb 16: Daily summary for Feb 15 posted to Konteks - quiet Saturday with all automated tasks running smoothly
 - [ ] Calendar: unique/non-recurring events for today
-- [ ] Email scan (all 3 accounts — jimmyplaysdrums, james@almeida.ventures, YouCanAlwaysReachJames):
-      - Flag anything that stands out as important
-      - Skip routine notifications (Stripe, shipping, newsletters)
+- [ ] Things 3: Check Today list + any overdue items
 - [ ] Send brief to James via WhatsApp if anything notable
 
 ## Daily Checks (rotate through)
 - [ ] GitHub notifications
+- [ ] Things 3: inbox triage, upcoming items
 - [ ] Konteks due/overdue items
 
 ## Ongoing Projects

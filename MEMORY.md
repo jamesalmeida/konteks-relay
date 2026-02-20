@@ -85,7 +85,7 @@ Completed full 30-question interview. Key insights saved to USER.md.
 - **Level 1 ASD** — diagnosed ~34-35. Craves order, predictability, logic. Sensory sensitivities.
 - **Deadlines stress him but he needs them** — creates the pressure to break through executive function barriers
 - **Reminders are welcome** — both Lauren and I should nudge him. Not nagging.
-- **7 fragmented organization systems** — Things 3, Google Calendar (3 accounts), Obsidian, Notion, Konteks, Memex, iOS Notes
+- **Consolidated to 3 systems** (Feb 19, 2026): Google Calendar (3 accounts), Things 3 (tasks), Obsidian (notes). Dropped Notion, Konteks, Memex, iOS Notes.
 
 ### Family Dynamics
 - Lauren stressed about finances since James left 9-5
