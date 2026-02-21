@@ -44,6 +44,11 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - **Services:** gmail, calendar, drive, contacts (all 3 accounts)
 - **Usage:** `gog gmail search 'newer_than:1d' --max 10` (uses default), add `--account james@almeida.ventures` for work
 
+### J-Lo Calendar Naming Convention
+- **J:** prefix = James only (Lauren can see it but knows it's his)
+- **L:** prefix = Lauren only
+- **No prefix** = both of them / shared reminder
+
 ### Important Calendars
 - **Plans (J-Lo)** (`is5gc4u6ck7g7c9iefr15pf04g@group.calendar.google.com`) — Shared family calendar with James & wife (Lauren). Contains logistics both need to see — not all James's tasks, but family awareness items. Check this one first for daily schedule.
 - **Family** — Family events
@@ -98,6 +103,12 @@ Things like:
 - **Things 3** — all tasks
 - **Obsidian** — all notes (vault: `~/Obsidian-Vault/`, PARA structure)
 - No more Notion, Konteks, Memex, or iOS Notes for task/note management
+
+## Cron Jobs
+- **All cron job delivery → WhatsApp** (channel: whatsapp, to: +14084271492)
+- Never use Discord or "last" for cron delivery
+- Always set: `"delivery": {"mode": "announce", "channel": "whatsapp", "to": "+14084271492"}`
+- **One-shot crons** (schedule.kind: "at") → always set `deleteAfterRun: true`
 
 ## Examples
 
