@@ -66,7 +66,8 @@ Things like:
 - Anything environment-specific
 
 ### Home Automation Setup
-- **Pi 5 16GB** — Running Home Assistant OS 17.1 at `192.168.184.150`
+- **Tersono-MacMini** — Static IP `192.168.184.133`
+- **Pi 5 16GB** — Running Home Assistant OS 17.1 at `192.168.184.253` (moved to house wallbox, wired to UDR-7)
   - HA token stored in `HA_TOKEN` env var
   - Lutron Caséta lights/switches auto-discovered and working
   - Ecobee thermostat — needs HomeKit Device integration (ecobee API keys discontinued)
@@ -109,6 +110,16 @@ Things like:
 - Never use Discord or "last" for cron delivery
 - Always set: `"delivery": {"mode": "announce", "channel": "whatsapp", "to": "+14084271492"}`
 - **One-shot crons** (schedule.kind: "at") → always set `deleteAfterRun: true`
+
+## 1Password CLI (op)
+- **Service account token:** `OP_SERVICE_ACCOUNT_TOKEN` in ~/.zshrc (⚠️ migrate to Keychain — see SECURITY.md)
+- **Vault:** Tersono (read/write access)
+- **Always use 1Password for secrets management** — store new secrets in the vault, retrieve with `op item get`
+- **Don't hardcode secrets** in .zshrc, .env files, or config files — use `op run` / `op read` for runtime injection
+- **Leave app-managed secrets alone** (gh CLI, OpenClaw device identity, etc.)
+- **When adding a new API key:** `op item create --category="API Credential" --vault=Tersono --title="Service Name" "API Key[password]=<value>"`
+- **When reading a secret:** `op item get "Service Name" --vault=Tersono --fields "API Key" --reveal`
+- See SECURITY.md for full secret inventory and migration roadmap
 
 ## Examples
 

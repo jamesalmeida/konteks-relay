@@ -124,6 +124,14 @@ Completed full 30-question interview. Key insights saved to USER.md.
 - Sheldn.ai as SaaS play
 - S-Corp business entity (Arkham Ventures → GSV rename in progress)
 
+## Security
+- **1Password CLI set up (Feb 21, 2026)** — Tersono vault with read/write service account
+- **All secrets go in 1Password** — don't hardcode in .zshrc or .env files
+- **Use `op item get` / `op run`** for runtime secret retrieval
+- **Leave app-managed auth alone** (gh CLI, OpenClaw device identity)
+- **SECURITY.md** tracks full posture, inventory, and migration roadmap
+- **Known debt:** OP token still in plaintext .zshrc, 7 other env vars need migrating, .env.local files unaudited
+
 ## Key Preferences
 - Codex CLI for coding (not Claude Code)
 - Private repos by default
