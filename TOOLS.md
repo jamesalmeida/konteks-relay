@@ -39,6 +39,7 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 
 ## Google Workspace (gog)
 - **Default account:** jimmyplaysdrums@gmail.com (set via GOG_ACCOUNT in .zshrc)
+- **⚠️ Always use FULL email addresses** with `--account` (e.g. `jimmyplaysdrums@gmail.com`, NOT `jimmyplaysdrums`)
 - **Work account:** james@almeida.ventures (IAS consulting client)
 - **Reachable account:** YouCanAlwaysReachJames@gmail.com
 - **Services:** gmail, calendar, drive, contacts (all 3 accounts)
