@@ -156,6 +156,15 @@
 
 ---
 
+## ⚠️ Known Debt: LaunchAgent Plist Secrets
+- **File:** `~/Library/LaunchAgents/ai.openclaw.gateway.plist`
+- **Issue:** Contains plaintext env vars (OP_SERVICE_ACCOUNT_TOKEN, XAI_API_KEY, HA_TOKEN, X_API_KEY, X_API_SECRET, X_BEARER_TOKEN, KONTEKS_API_KEY, THINGS_AUTH_TOKEN, GOG_ACCOUNT) injected directly into the plist so launchd can pass them to the gateway process.
+- **Risk:** Low (file is user-readable only, local machine), but secrets in plaintext config files is not ideal.
+- **Future fix:** Use `op run` or a wrapper script that sources secrets at runtime instead of baking them into the plist. Alternatively, use macOS Keychain or `launchctl setenv` with a boot script.
+- **Added:** 2026-02-25
+
+---
+
 ## 🔒 Principles
 
 1. **Secrets never in git** — .env in .gitignore, no exceptions
