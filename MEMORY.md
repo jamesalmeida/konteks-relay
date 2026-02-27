@@ -124,6 +124,19 @@ Completed full 30-question interview. Key insights saved to USER.md.
 - Sheldn.ai as SaaS play
 - S-Corp business entity (Arkham Ventures → GSV rename in progress)
 
+## Domains (Cloudflare)
+- actually-useful-ai.com — old Sheldn branding
+- almeida.ventures — S-Corp / consulting
+- arkham.ventures — S-Corp (renaming to GSV)
+- clawpernicus.app — unused
+- fastclaw.app — old Sheldn branding
+- frontrun.ventures — unused
+- gsv.to ⭐ — future S-Corp rebrand
+- jamesalmeida.me ⭐ — personal portfolio/hub
+- konteks.app — Konteks product
+- protipsbyjames.com — content/tips site
+- sheldn.ai ⭐ — SaaS product (primary)
+
 ## Security
 - **1Password CLI set up (Feb 21, 2026)** — Tersono vault with read/write service account
 - **All secrets go in 1Password** — don't hardcode in .zshrc or .env files
