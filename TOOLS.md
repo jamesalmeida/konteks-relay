@@ -6,6 +6,13 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 **Use Codex CLI** (not Claude Code) for coding tasks. James prefers OpenAI's Codex for dev work.
 **Always use Codex for ALL coding** — don't manually edit code files yourself. Only handle git branches, repo management, and non-code tasks directly. If Codex can't do something (git ops outside its workdir), then you can step in.
 
+### ⚠️ ACP / Coding Agent Safety Rules
+- **NEVER spawn coding agents in `~/clawd`** — that's Tersono's workspace with SOUL.md, MEMORY.md, identity files. A coding agent will try to follow AGENTS.md/BOOTSTRAP.md and potentially delete or modify critical files.
+- **ALWAYS specify `cwd` to the target project repo** (e.g. `~/dev/sheldn-ai`, `~/dev/konteks-web`)
+- Coding agents are sandboxed to their `cwd` — treat it like giving someone write access to a folder
+- When using `/acp spawn codex`, always include `--cwd /path/to/repo`
+- When using `sessions_spawn` with `runtime: "acp"`, always set `cwd` to the project directory
+
 ### New Projects Workflow
 - Create a new GitHub repo for new projects: `gh repo create <name> --private`
 - **Always private by default**

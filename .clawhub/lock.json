@@ -84,6 +84,10 @@
     "summarize": {
       "version": "1.0.0",
       "installedAt": 1771083136268
+    },
+    "home-assistant": {
+      "version": "1.0.0",
+      "installedAt": 1772422921721
     }
   }
 }
