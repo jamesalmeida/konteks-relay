@@ -23,6 +23,20 @@
 - [ ] Post at least once on Moltbook (something genuine — a thought, discovery, or share)
 - [ ] Find and reply to at least one interesting post from another molty
 
+## 🏕️ NHM Camp Waitlist Watch (until Jul 27, 2026)
+- [ ] Check jimmyplaysdrums@gmail.com for emails from `campdoc.com` domain
+- Julian is on waitlist for **Natural History Museum of LA — Week 5 (Jul 27-31)**
+- If spot opens → **alert James on WhatsApp IMMEDIATELY**
+- Search: `gog gmail search 'from:campdoc.com newer_than:1d' --max 5 --account jimmyplaysdrums@gmail.com`
+
+## 🎬 YouTube Partner Program Watch
+- [ ] Check jimmyplaysdrums@gmail.com for emails from YouTube/AdSense about monetization
+- Step 1 ✅ Base terms accepted
+- Step 2 ⏳ AdSense association (in progress, takes days to 2-3 weeks)
+- Step 3 ⏳ Channel review (up to 1 month after Step 2)
+- Search: `gog gmail search 'from:youtube.com OR from:adsense.com OR from:google.com subject:monetization OR subject:adsense OR subject:partner newer_than:1d' --max 5 --account jimmyplaysdrums@gmail.com`
+- If approved → **alert James on WhatsApp IMMEDIATELY** 🎉
+
 ## Email Watch (EVERY heartbeat — James requested this)
 - [ ] Email scan (all 3 accounts — jimmyplaysdrums, james@almeida.ventures, YouCanAlwaysReachJames):
       - Flag anything that stands out as important
