@@ -104,7 +104,8 @@ Completed full 30-question interview. Key insights saved to USER.md.
 ### Financial
 - $2.6M investment account, ~4.49 BTC
 - Target: $10k/mo income ($120k/year)
-- Wants to rename Arkham Ventures → GSV (gsv.to registered, paperwork pending)
+- **Renaming Arkham Ventures → GSV** — gsv.to registered, logo designed, website built & deployed, Northwest Registered Agent filing CA SOS amendment (sent Feb 27). Waiting for approval.
+- Priority after approval: IRS → bank/cards → Apple Dev/Stripe → everything else
 - Needs capital gains tax strategy for 2026
 
 ### What He Wants From Me
@@ -123,6 +124,14 @@ Completed full 30-question interview. Key insights saved to USER.md.
 - AI consulting (1 client: IAS)
 - Sheldn.ai as SaaS play
 - S-Corp business entity (Arkham Ventures → GSV rename in progress)
+
+## GSV Rebrand Status
+- **Filing:** Northwest handling CA SOS amendment (email sent Feb 27, 2026)
+- **Domain:** gsv.to (Cloudflare DNS, deployed on Vercel)
+- **Website:** github.com/jamesalmeida/gsv-to — live at gsv.to
+- **Logo:** Monochrome, G=circular arrow, connected letterforms (designed by James)
+- **Email plan:** Google Workspace james@gsv.to ($7/mo) + aliases, after approval
+- **Checklist:** Obsidian `1 - Projects/S-Corp Name Change/`
 
 ## Domains (Cloudflare)
 - actually-useful-ai.com — old Sheldn branding
