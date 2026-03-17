@@ -130,6 +130,22 @@ Things like:
 - **When reading a secret:** `op item get "Service Name" --vault=Tersono --fields "API Key" --reveal`
 - See SECURITY.md for full secret inventory and migration roadmap
 
+## Discord Server
+- **Guild ID:** 273108376525733890
+- **Full channel ID reference:** Obsidian → `1 - Projects/Clawdbot/Discord Channel IDs.md`
+- **Wagner-only channels (not Tersono's):** wagner-lab, plex, calibre, home-assistant — belong to the Wagner house agent
+- **wagner-st:** shared, requires @mention
+- **Config:** `~/.openclaw/openclaw.json` — all channels use numeric IDs (fixed 2026-03-16)
+
+## Browser Access
+- **`user` profile** — Connected to Chrome on Tersono-MacMini via Chrome DevTools MCP (existing-session driver)
+  - Chrome remote debugging enabled at `chrome://inspect/#remote-debugging`
+  - Consent accepted Mar 16, 2026
+  - Use `profile="user"` when you need James's logged-in sessions (X, Google, etc.)
+  - Use default `openclaw` profile for throwaway/isolated browsing
+- **`openclaw` profile** — Headless managed browser (isolated, no login state)
+- **Chrome extension relay** (`chrome-relay`) — Available but prefer `user` profile
+
 ## Examples
 
 ```markdown
