@@ -26,7 +26,7 @@ export const sendFromApp = mutation({
       role: "user",
       content,
       timestamp: Date.now(),
-      source: "fastclaw",
+      source: "konteks",
       synced: false,
     });
 

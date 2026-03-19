@@ -1,7 +1,7 @@
 {
-  "name": "openclaw-skill-fastclaw",
+  "name": "openclaw-skill-konteks-relay",
   "version": "1.0.0",
-  "description": "OpenClaw skill that connects your self-hosted OpenClaw instance to the [FastClaw](https://fastclaw.app) iOS app.",
+  "description": "OpenClaw skill that connects your self-hosted OpenClaw instance to the [Konteks](https://konteks.app) iOS app.",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamesalmeida/openclaw-skill-fastclaw.git"
+    "url": "git+https://github.com/jamesalmeida/openclaw-skill-konteks-relay.git"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +24,7 @@
     "yaml": "^2.8.1"
   },
   "bugs": {
-    "url": "https://github.com/jamesalmeida/openclaw-skill-fastclaw/issues"
+    "url": "https://github.com/jamesalmeida/openclaw-skill-konteks-relay/issues"
   },
-  "homepage": "https://github.com/jamesalmeida/openclaw-skill-fastclaw#readme"
+  "homepage": "https://github.com/jamesalmeida/openclaw-skill-konteks-relay#readme"
 }

@@ -1,21 +1,21 @@
 ---
-name: fastclaw-relay
-description: Connect your OpenClaw to the FastClaw iOS app. Relays messages between your local Gateway and FastClaw via Convex cloud sync. No port forwarding, no VPN — just pair and go.
+name: konteks-relay
+description: Connect your OpenClaw to the Konteks iOS app. Relays messages between your local Gateway and Konteks via Convex cloud sync. No port forwarding, no VPN — just pair and go.
 ---
 
-# FastClaw Relay
+# Konteks Relay
 
-Bridges your local OpenClaw Gateway to the FastClaw iOS app via Convex real-time sync.
+Bridges your local OpenClaw Gateway to the Konteks iOS app via Convex real-time sync.
 
 ## How It Works
 
 ```
-OpenClaw Gateway (local)  ←WebSocket→  fastclaw-relay  ←Convex→  FastClaw App (iOS)
+OpenClaw Gateway (local)  ←WebSocket→  konteks-relay  ←Convex→  Konteks App (iOS)
 ```
 
 1. The relay connects to your local Gateway WebSocket as an operator client
 2. Messages sync bidirectionally through Convex (cloud)
-3. The FastClaw iOS app subscribes to Convex — works from anywhere
+3. The Konteks iOS app subscribes to Convex — works from anywhere
 
 No network configuration needed. Both sides connect **outbound**.
 
@@ -24,20 +24,20 @@ No network configuration needed. Both sides connect **outbound**.
 ### 1. Install the skill
 
 ```bash
-clawhub install fastclaw-relay
+clawhub install konteks-relay
 ```
 
 ### 2. Start pairing
 
 ```bash
-openclaw fastclaw pair
+openclaw konteks pair
 ```
 
 This displays a QR code containing your Convex deployment URL and a one-time pairing token.
 
-### 3. Scan from FastClaw app
+### 3. Scan from Konteks app
 
-Open FastClaw → tap "Connect" → scan the QR code. Done.
+Open Konteks → tap "Connect" → scan the QR code. Done.
 
 ## Configuration
 
@@ -46,7 +46,7 @@ The relay reads from environment or OpenClaw config:
 - `FASTCLAW_CONVEX_URL` — Your Convex deployment URL (provisioned during setup)
 - `FASTCLAW_INSTANCE_ID` — Unique ID for this OpenClaw instance (auto-generated)
 
-These are stored in `~/.openclaw/fastclaw/config.json` after first pairing.
+These are stored in `~/.openclaw/konteks/config.json` after first pairing.
 
 ## Architecture
 
@@ -65,7 +65,7 @@ The relay connects to the local Gateway WebSocket (`ws://127.0.0.1:18789`) using
 
 ### Message Flow
 
-**User sends from FastClaw app:**
+**User sends from Konteks app:**
 1. App writes message to Convex `messages` table
 2. Relay receives real-time update via Convex subscription
 3. Relay forwards message to Gateway WebSocket
@@ -83,7 +83,7 @@ The relay connects to the local Gateway WebSocket (`ws://127.0.0.1:18789`) using
 
 - Pairing codes expire after 5 minutes
 - All Convex communication is over TLS
-- Instance tokens are stored locally in `~/.openclaw/fastclaw/`
+- Instance tokens are stored locally in `~/.openclaw/konteks/`
 - The relay only syncs message content — no API keys, tokens, or config
 - Gateway token never leaves the local machine
 - Open source for full auditability
@@ -95,8 +95,8 @@ The relay connects to the local Gateway WebSocket (`ws://127.0.0.1:18789`) using
 - Verify gateway token matches: check `~/.openclaw/config.yaml`
 
 ### Messages not syncing
-- Check relay process: `openclaw fastclaw status`
+- Check relay process: `openclaw konteks status`
 - Verify Convex deployment: `npx convex dashboard`
 
 ### Re-pairing
-- Run `openclaw fastclaw pair --reset` to generate a new pairing code
+- Run `openclaw konteks pair --reset` to generate a new pairing code

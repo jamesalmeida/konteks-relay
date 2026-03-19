@@ -46,7 +46,7 @@ export default defineSchema({
     content: v.string(),
     timestamp: v.number(),
     // For messages originating from FastClaw app
-    source: v.union(v.literal("gateway"), v.literal("fastclaw")),
+    source: v.union(v.literal("gateway"), v.literal("konteks")),
     // Track sync status
     synced: v.boolean(),
   })

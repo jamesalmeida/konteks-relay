@@ -7,7 +7,7 @@ import { ConvexHttpClient } from "convex/browser";
 import WebSocket from "ws";
 
 const DEFAULT_GATEWAY_URL = "ws://127.0.0.1:18789";
-const CONFIG_PATH = path.join(os.homedir(), ".openclaw", "fastclaw", "config.json");
+const CONFIG_PATH = path.join(os.homedir(), ".openclaw", "konteks", "config.json");
 const APP_POLL_MS = 2000;
 const HEARTBEAT_MS = 30000;
 const SESSION_SYNC_MS = 15000;
@@ -47,7 +47,7 @@ async function loadConfig() {
 
 function makeDeviceIdentity(instanceId) {
   const { privateKey, publicKey } = generateKeyPairSync("ed25519");
-  const deviceId = `fastclaw-relay-${createHash("sha256").update(instanceId).digest("hex").slice(0, 16)}`;
+  const deviceId = `konteks-relay-${createHash("sha256").update(instanceId).digest("hex").slice(0, 16)}`;
   const publicKeyB64 = publicKey.export({ format: "der", type: "spki" }).toString("base64");
 
   return { deviceId, privateKey, publicKeyB64 };
@@ -170,7 +170,7 @@ class GatewayConnection {
               publicKey: this.identity.publicKeyB64,
             },
             meta: {
-              source: "fastclaw-relay",
+              source: "konteks-relay",
               instanceId: this.instanceId,
             },
           };
@@ -278,7 +278,7 @@ class GatewayConnection {
       ws.once("close", done);
       ws.once("error", done);
       try {
-        ws.close(1000, "fastclaw shutdown");
+        ws.close(1000, "konteks shutdown");
       } catch {
         resolve();
       }
@@ -313,7 +313,7 @@ class Relay {
   }
 
   async start() {
-    console.log("fastclaw relay starting...");
+    console.log("konteks relay starting...");
 
     while (this.running) {
       this.conn = new GatewayConnection(this.config);
@@ -342,7 +342,7 @@ class Relay {
       await sleep(waitMs);
     }
 
-    console.log("fastclaw relay stopped");
+    console.log("konteks relay stopped");
   }
 
   async runConnected(conn) {

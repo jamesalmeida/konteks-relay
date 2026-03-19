@@ -8,7 +8,7 @@ import YAML from "yaml";
 import { v4 as uuidv4 } from "uuid";
 
 const DEFAULT_GATEWAY_URL = "ws://127.0.0.1:18789";
-const FASTCLAW_CONFIG_PATH = path.join(os.homedir(), ".openclaw", "fastclaw", "config.json");
+const FASTCLAW_CONFIG_PATH = path.join(os.homedir(), ".openclaw", "konteks", "config.json");
 const OPENCLAW_CONFIG_PATH = path.join(os.homedir(), ".openclaw", "config.yaml");
 
 async function exists(filePath) {
@@ -101,7 +101,7 @@ async function main() {
 
   const qrPayload = JSON.stringify({ convexUrl, code });
 
-  console.log("Scan this QR code in the FastClaw iOS app:\n");
+  console.log("Scan this QR code in the Konteks iOS app:\n");
   qrcode.generate(qrPayload, { small: true });
   console.log(`\nPairing code: ${code}`);
   console.log("Waiting for device to claim pairing code...");

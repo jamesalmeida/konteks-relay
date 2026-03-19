@@ -1,9 +1,9 @@
-# FastClaw Relay — Architecture
+# Konteks Relay — Architecture
 
 ## Overview
 
 The relay is a Node.js process that bridges the local OpenClaw Gateway WebSocket
-to Convex cloud, enabling the FastClaw iOS app to communicate with OpenClaw from anywhere.
+to Convex cloud, enabling the Konteks iOS app to communicate with OpenClaw from anywhere.
 
 ## Components
 
@@ -15,7 +15,7 @@ Long-running Node.js script that:
 2. **Connects to Convex** using the deployment URL + auth
 3. **Syncs bidirectionally:**
    - Gateway → Convex: session list, new messages, status heartbeat
-   - Convex → Gateway: user messages from FastClaw app
+   - Convex → Gateway: user messages from Konteks app
 
 #### Gateway Connection
 - Uses OpenClaw Gateway WS protocol v3
@@ -30,7 +30,7 @@ Long-running Node.js script that:
 - Sends heartbeat every 30s via `sessions:heartbeat`
 
 #### Message Flow (App → Gateway)
-1. App writes to Convex `messages` table (source: "fastclaw", synced: false)
+1. App writes to Convex `messages` table (source: "konteks", synced: false)
 2. Relay subscribes to unsynced messages
 3. Relay sends message to Gateway via WS (`sessions.send` or equivalent method)
 4. Relay marks message as synced via `messages:markSynced`
@@ -46,7 +46,7 @@ Long-running Node.js script that:
 
 One-shot script for QR code pairing:
 
-1. Generates/reads instance ID from `~/.openclaw/fastclaw/config.json`
+1. Generates/reads instance ID from `~/.openclaw/konteks/config.json`
 2. Calls `pairing:createPairingCode` on Convex
 3. Displays QR code in terminal (using `qrcode-terminal` npm package)
 4. Polls `pairing:checkPairingStatus` until claimed or expired
@@ -54,7 +54,7 @@ One-shot script for QR code pairing:
 
 ### 3. Config Storage
 
-`~/.openclaw/fastclaw/config.json`:
+`~/.openclaw/konteks/config.json`:
 ```json
 {
   "instanceId": "uuid-v4",
