@@ -418,13 +418,17 @@ class Relay {
           const key = runId || sessionKey;
           const accumulated = this._agentStreams?.get(key);
           if (accumulated?.text) {
-            console.log(`[agent-done] ${sessionKey}: ${accumulated.text.substring(0, 80)}`);
-            void this.pushGatewayMessages([{
-              sessionKey: accumulated.sessionKey,
-              role: "assistant",
-              content: accumulated.text,
-              timestamp: accumulated.ts,
-            }]);
+            // Normalize session key: gateway prefixes with "agent:main:" but the
+            // app may have sent using just the local key. Push to both so the app
+            // can find the message regardless of which key it's listening on.
+            const gwKey = accumulated.sessionKey;
+            const appKey = gwKey.replace(/^agent:main:/, "");
+            console.log(`[agent-done] ${gwKey}: ${accumulated.text.substring(0, 80)}`);
+            const messages = [{ sessionKey: gwKey, role: "assistant", content: accumulated.text, timestamp: accumulated.ts }];
+            if (appKey !== gwKey) {
+              messages.push({ sessionKey: appKey, role: "assistant", content: accumulated.text, timestamp: accumulated.ts });
+            }
+            void this.pushGatewayMessages(messages);
             this._agentStreams.delete(key);
           }
         }
