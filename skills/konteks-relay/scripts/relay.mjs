@@ -45,12 +45,23 @@ async function loadConfig() {
   };
 }
 
-function makeDeviceIdentity(instanceId) {
-  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
-  const deviceId = `konteks-relay-${createHash("sha256").update(instanceId).digest("hex").slice(0, 16)}`;
-  const publicKeyB64 = publicKey.export({ format: "der", type: "spki" }).toString("base64");
+const ED25519_SPKI_PREFIX_LEN = 12; // 302a300506032b6570032100
 
-  return { deviceId, privateKey, publicKeyB64 };
+function base64UrlEncode(buf) {
+  return buf.toString("base64").replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/g, "");
+}
+
+function makeDeviceIdentity(_instanceId) {
+  const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+  const spkiDer = publicKey.export({ format: "der", type: "spki" });
+  // Extract raw 32-byte ed25519 key from SPKI DER (strip the 12-byte prefix)
+  const rawKey = spkiDer.subarray(ED25519_SPKI_PREFIX_LEN);
+  // Gateway expects base64url of raw key bytes
+  const publicKeyB64Url = base64UrlEncode(rawKey);
+  // Device ID = sha256 hex of raw key bytes
+  const deviceId = createHash("sha256").update(rawKey).digest("hex");
+
+  return { deviceId, privateKey, publicKeyB64Url };
 }
 
 function extractSessions(payload) {
@@ -123,7 +134,6 @@ class GatewayConnection {
     this.instanceId = config.instanceId;
     this.instanceName = config.instanceName;
     this.identity = makeDeviceIdentity(config.instanceId);
-
     this.ws = null;
     this.pending = new Map();
     this.handlers = new Set();
@@ -159,30 +169,58 @@ class GatewayConnection {
 
       const sendConnect = async (challenge) => {
         try {
-          const payload = {
+          const params = {
+            minProtocol: 3,
+            maxProtocol: 3,
+            client: {
+              id: "gateway-client",
+              displayName: "Konteks Relay",
+              version: "1.0.0",
+              platform: "node",
+              mode: "backend",
+              instanceId: this.instanceId,
+            },
             role: "operator",
             scopes: ["operator.read", "operator.write"],
-            mode: "operator",
-            name: this.instanceName,
-            token: this.token,
-            device: {
-              id: this.identity.deviceId,
-              publicKey: this.identity.publicKeyB64,
-            },
-            meta: {
-              source: "konteks-relay",
-              instanceId: this.instanceId,
+            auth: {
+              token: this.token,
             },
           };
 
+          // Add device identity with v3 challenge signature to retain operator scopes
           if (challenge?.nonce) {
             const nonce = String(challenge.nonce);
             const signedAt = nowMs();
-            const signature = sign(null, Buffer.from(`${nonce}:${signedAt}`), this.identity.privateKey).toString("base64");
-            payload.challenge = { nonce, signedAt, signature };
+            const role = "operator";
+            const scopesStr = params.scopes.join(",");
+            const token = params.auth.token ?? "";
+            const platform = params.client.platform ?? "";
+            const deviceFamily = params.client.deviceFamily ?? "";
+            // v3 payload: v3|deviceId|clientId|clientMode|role|scopes|signedAtMs|token|nonce|platform|deviceFamily
+            const payloadStr = [
+              "v3",
+              this.identity.deviceId,
+              params.client.id,
+              params.client.mode,
+              role,
+              scopesStr,
+              String(signedAt),
+              token,
+              nonce,
+              platform.toLowerCase(),
+              deviceFamily.toLowerCase(),
+            ].join("|");
+            const signature = base64UrlEncode(sign(null, Buffer.from(payloadStr), this.identity.privateKey));
+            params.device = {
+              id: this.identity.deviceId,
+              publicKey: this.identity.publicKeyB64Url,
+              signature,
+              signedAt,
+              nonce,
+            };
           }
 
-          const response = await this.request("connect", payload, 12000);
+          const response = await this.request("connect", params, 12000);
           const type = response?.type ?? response?.event;
           if (type !== "hello-ok") {
             throw new Error(`Unexpected connect response type: ${type ?? "unknown"}`);
@@ -205,7 +243,7 @@ class GatewayConnection {
         const frame = parseJson(String(raw));
         if (!frame) return;
 
-        if (frame.id && this.pending.has(frame.id)) {
+        if (frame.type === "res" && frame.id && this.pending.has(frame.id)) {
           const p = this.pending.get(frame.id);
           clearTimeout(p.timer);
           this.pending.delete(frame.id);
@@ -244,7 +282,7 @@ class GatewayConnection {
     }
 
     const id = randomUUID();
-    const frame = { id, method, payload };
+    const frame = { type: "req", id, method, params: payload };
 
     return new Promise((resolve, reject) => {
       const timer = setTimeout(() => {
