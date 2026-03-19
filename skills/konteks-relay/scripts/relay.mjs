@@ -387,16 +387,51 @@ class Relay {
     let stopping = false;
 
     const onFrame = (frame) => {
-      if (frame?.event === "chat.message" || frame?.type === "chat.message") {
-        void this.pushGatewayMessages(extractGatewayMessages(frame));
+      const evt = frame?.event || frame?.type;
+
+      // Handle chat/agent frames — extract messages and push to Convex
+      if (evt === "chat" || evt === "chat.message" || evt === "chat.response") {
+        const messages = extractGatewayMessages(frame);
+        if (messages.length > 0) {
+          console.log(`[chat] ${messages.length} message(s) for ${messages[0]?.sessionKey}`);
+          void this.pushGatewayMessages(messages);
+        }
       }
 
-      if (frame?.event === "sessions.updated" || frame?.type === "sessions.updated") {
+      // Agent streaming frames — accumulate text and push on completion
+      if (evt === "agent") {
+        const payload = frame?.payload || {};
+        const sessionKey = payload.sessionKey;
+        const runId = payload.runId;
+
+        if (payload.stream === "assistant" && sessionKey && payload.data?.text) {
+          // Track the latest accumulated text for this run
+          if (!this._agentStreams) this._agentStreams = new Map();
+          this._agentStreams.set(runId || sessionKey, {
+            sessionKey,
+            text: payload.data.text,
+            ts: payload.ts || nowMs(),
+          });
+        }
+
+        if (payload.stream === "lifecycle" && payload.data?.phase === "end" && sessionKey) {
+          const key = runId || sessionKey;
+          const accumulated = this._agentStreams?.get(key);
+          if (accumulated?.text) {
+            console.log(`[agent-done] ${sessionKey}: ${accumulated.text.substring(0, 80)}`);
+            void this.pushGatewayMessages([{
+              sessionKey: accumulated.sessionKey,
+              role: "assistant",
+              content: accumulated.text,
+              timestamp: accumulated.ts,
+            }]);
+            this._agentStreams.delete(key);
+          }
+        }
+      }
+
+      if (evt === "sessions.updated") {
         void this.syncSessions(conn);
-      }
-
-      if (frame?.event === "chat.response" || frame?.type === "chat.response") {
-        void this.pushGatewayMessages(extractGatewayMessages(frame));
       }
     };
 
@@ -456,7 +491,9 @@ class Relay {
 
       const syncedIds = [];
       for (const message of unsynced) {
+        console.log(`[forward] ${message.content?.substring(0,40)} → ${message.sessionKey}`);
         const sent = await this.sendToGateway(conn, message);
+        console.log(`[forward] result: ${sent ? 'ok' : 'failed'}`);
         if (sent && message?._id) syncedIds.push(message._id);
       }
 
