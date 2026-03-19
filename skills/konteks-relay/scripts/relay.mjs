@@ -476,9 +476,7 @@ class Relay {
     const idempotencyKey = typeof message?._id === "string" ? message._id : randomUUID();
 
     const attempts = [
-      { method: "chat.send", payload: { sessionKey, text: content, idempotencyKey } },
-      { method: "chat.send", payload: { sessionKey, content, idempotencyKey } },
-      { method: "send", payload: { sessionKey, text: content, idempotencyKey } },
+      { method: "chat.send", payload: { sessionKey, message: content, idempotencyKey } },
     ];
 
     for (const attempt of attempts) {
