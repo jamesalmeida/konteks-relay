@@ -104,8 +104,9 @@ Completed full 30-question interview. Key insights saved to USER.md.
 ### Financial
 - $2.6M investment account, ~4.49 BTC
 - Target: $10k/mo income ($120k/year)
-- **Renaming Arkham Ventures → GSV** — gsv.to registered, logo designed, website built & deployed, Northwest Registered Agent filing CA SOS amendment (sent Feb 27). Waiting for approval.
-- Priority after approval: IRS → bank/cards → Apple Dev/Stripe → everything else
+- **Arkham Ventures → General Systems Ventures (DBA: GSV)** — ✅ OFFICIAL as of March 11, 2026 (File No. BA20260563282, Entity No. 6330528)
+- gsv.to registered, logo designed, website built & deployed
+- **Next steps:** IRS (Form 8822-B) → Mercury/Chase/Amex → Apple Dev/Stripe (need amendment paperwork) → email setup (james@gsv.to via Google Workspace)
 - Needs capital gains tax strategy for 2026
 
 ### What He Wants From Me

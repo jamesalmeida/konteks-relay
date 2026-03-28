@@ -178,6 +178,21 @@ Things like:
 - **All domains on Cloudflare** for DNS management
 - When pointing to Vercel: proxy OFF (grey cloud / DNS only) to avoid SSL conflicts
 
+## Sub-Agent Rule
+**Always use background exec (or subagents) for tasks that take >30 seconds** — transcription, downloads, Codex runs, etc. This keeps the main session free to respond to follow-up messages while work continues in the background. Use `openclaw system event` at the end of the background command to get pinged on completion.
+
+## Transcription
+- **insanely-fast-whisper** — preferred local transcription tool (10-30x faster than standard Whisper)
+  - Installed via pipx: `insanely-fast-whisper`
+  - macOS command: `insanely-fast-whisper --file-name <file> --device-id mps --transcript-path output.json`
+  - Extract text: `cat output.json | python3 -c "import json,sys; print(json.load(sys.stdin)['text'])"`
+  - Default model: `distil-whisper/distil-medium.en` (large-v3 SIGTERM'd on MPS — too much memory)
+  - Command: `insanely-fast-whisper --file-name <file> --device-id mps --model-name distil-whisper/distil-medium.en --transcript-path /tmp/transcript.json`
+  - ~36 seconds for a short video on M4 Mac mini
+  - English-only; for other languages use `distil-whisper/large-v2`
+  - Skill repo: <https://github.com/jamesalmeida/insanely-fast-whisper-skill>
+- Use `openai-whisper-api` (cloud) only if local transcription fails or is insufficient
+
 ## Why Separate?
 
 Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
