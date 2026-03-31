@@ -6,8 +6,7 @@
 - Only act if something in this file is unchecked AND time-sensitive.
 
 ## Cron Jobs Handle These (don't duplicate)
-- ✅ Email watch (3 accounts) → cron: "Email Watch + Camp Waitlist" (8am/11am/2pm/5pm)
-- ✅ Camp waitlist (campdoc.com) → same cron job
+- ✅ Email watch (3 accounts) → cron: "Email Watch" (8am/11am/2pm/5pm)
 - ✅ Morning Brief → cron: "Morning Brief" (6:30am daily)
 - ✅ Daily Summary → cron: "Daily Summary → Konteks" (midnight daily)
 - ✅ Nightly Build → cron: "Nightly Build" (2am daily)
