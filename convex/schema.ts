@@ -71,6 +71,8 @@ export default defineSchema({
     source: v.union(v.literal("gateway"), v.literal("fastclaw")),
     // Track sync status
     synced: v.boolean(),
+    // Whether this is a thinking/reasoning message
+    isThinking: v.optional(v.boolean()),
     // Image attachments (optional)
     attachments: v.optional(v.array(v.object({
       type: v.string(), // "image"

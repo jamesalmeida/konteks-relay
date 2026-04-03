@@ -65,8 +65,9 @@ export const pushFromGateway = mutation({
     role: v.union(v.literal("user"), v.literal("assistant"), v.literal("system")),
     content: v.string(),
     timestamp: v.number(),
+    isThinking: v.optional(v.boolean()),
   },
-  handler: async (ctx, { instanceId, sessionKey, role, content, timestamp }) => {
+  handler: async (ctx, { instanceId, sessionKey, role, content, timestamp, isThinking }) => {
     // Deduplicate: check if a message with same session+role+timestamp already exists
     const existing = await ctx.db
       .query("messages")
@@ -87,6 +88,7 @@ export const pushFromGateway = mutation({
       timestamp,
       source: "gateway",
       synced: true,
+      ...(isThinking ? { isThinking: true } : {}),
     });
 
     // Update session

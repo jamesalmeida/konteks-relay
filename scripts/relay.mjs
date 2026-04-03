@@ -366,23 +366,30 @@ class Relay {
         const sessionKey = p?.sessionKey;
         if (runId && sessionKey) {
           if (p?.state === "delta" && p?.message) {
-            // Track latest accumulated text per runId
+            // Track latest accumulated text + thinking per runId
             let text = "";
+            let thinking = "";
             if (Array.isArray(p.message.content)) {
               text = p.message.content
                 .filter((c) => c?.type === "text")
                 .map((c) => c.text)
                 .join("\n");
+              thinking = p.message.content
+                .filter((c) => c?.type === "thinking")
+                .map((c) => c.thinking || c.text || "")
+                .join("\n");
             } else if (typeof p.message.content === "string") {
               text = p.message.content;
             }
-            if (text) this.pendingDeltas.set(runId, { sessionKey, text, timestamp: p.message.timestamp ?? nowMs() });
+            if (text || thinking) this.pendingDeltas.set(runId, { sessionKey, text, thinking, timestamp: p.message.timestamp ?? nowMs() });
           } else if (p?.state === "final") {
             // Push final message (from final payload or accumulated delta)
             let text = "";
+            let thinking = "";
             if (p?.message) {
               if (Array.isArray(p.message.content)) {
                 text = p.message.content.filter((c) => c?.type === "text").map((c) => c.text).join("\n");
+                thinking = p.message.content.filter((c) => c?.type === "thinking").map((c) => c.thinking || c.text || "").join("\n");
               } else if (typeof p.message.content === "string") {
                 text = p.message.content;
               }
@@ -390,8 +397,14 @@ class Relay {
             const delta = this.pendingDeltas.get(runId);
             this.pendingDeltas.delete(runId);
             const finalText = text || delta?.text || "";
+            const finalThinking = thinking || delta?.thinking || "";
+            const ts = delta?.timestamp ?? nowMs();
+            // Push thinking message first (if any), then the actual response
+            if (finalThinking.trim()) {
+              void this.pushChatEvent({ sessionKey, message: { role: "assistant", content: finalThinking, timestamp: ts - 1, isThinking: true } });
+            }
             if (finalText.trim()) {
-              void this.pushChatEvent({ sessionKey, message: { role: "assistant", content: finalText, timestamp: delta?.timestamp ?? nowMs() } });
+              void this.pushChatEvent({ sessionKey, message: { role: "assistant", content: finalText, timestamp: ts } });
             }
           }
         }
@@ -693,6 +706,7 @@ class Relay {
 
       const role = msg.role === "user" ? "user" : msg.role === "assistant" ? "assistant" : "system";
       const timestamp = toNumber(msg.timestamp, nowMs());
+      const isThinking = msg.isThinking === true;
 
       await this.convex.mutation("messages:pushFromGateway", {
         instanceId: this.config.instanceId,
@@ -700,8 +714,9 @@ class Relay {
         role,
         content: text.slice(0, 4000),
         timestamp,
+        ...(isThinking ? { isThinking: true } : {}),
       });
-      console.log(`pushed ${role} message to Convex for ${sessionKey}`);
+      console.log(`pushed ${role}${isThinking ? " (thinking)" : ""} message to Convex for ${sessionKey}`);
     } catch (err) {
       console.error(`pushChatEvent failed: ${err.message}`);
     }
@@ -727,8 +742,12 @@ class Relay {
           for (const msg of rawMessages) {
             if (msg.role === "toolResult" || msg.role === "tool") continue;
 
-            // Extract text from structured content
+            const role = msg.role === "user" ? "user" : msg.role === "assistant" ? "assistant" : "system";
+            const ts = toNumber(msg.timestamp ?? msg.ts, nowMs());
+
+            // Extract text and thinking from structured content
             let text = "";
+            let thinking = "";
             if (typeof msg.content === "string") {
               text = msg.content;
             } else if (Array.isArray(msg.content)) {
@@ -736,15 +755,28 @@ class Relay {
                 .filter((part) => part?.type === "text" && typeof part?.text === "string")
                 .map((part) => part.text)
                 .join("\n");
+              thinking = msg.content
+                .filter((part) => part?.type === "thinking")
+                .map((part) => part.thinking || part.text || "")
+                .join("\n");
+            }
+
+            // Push thinking block as separate message (before the main text)
+            if (thinking.trim()) {
+              messages.push({
+                role,
+                content: thinking.slice(0, 4000),
+                timestamp: ts - 1, // slightly before text message for ordering
+                isThinking: true,
+              });
             }
 
             if (!text.trim()) continue;
 
-            const role = msg.role === "user" ? "user" : msg.role === "assistant" ? "assistant" : "system";
             messages.push({
               role,
               content: text.slice(0, 4000), // cap length
-              timestamp: toNumber(msg.timestamp ?? msg.ts, nowMs()),
+              timestamp: ts,
             });
           }
 
@@ -759,6 +791,7 @@ class Relay {
                 role: m.role,
                 content: m.content,
                 timestamp: m.timestamp,
+                ...(m.isThinking ? { isThinking: true } : {}),
               });
             } catch {
               // skip duplicates or errors
