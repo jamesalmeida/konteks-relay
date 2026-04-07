@@ -49,6 +49,14 @@ export default defineSchema({
     source: v.union(v.literal("gateway"), v.literal("konteks")),
     // Track sync status
     synced: v.boolean(),
+    // Optional attachments (images, etc.)
+    attachments: v.optional(v.array(v.object({
+      type: v.string(),
+      storageId: v.string(),
+      mimeType: v.string(),
+      filename: v.string(),
+      url: v.optional(v.string()),
+    }))),
   })
     .index("by_session", ["instanceId", "sessionKey", "timestamp"])
     .index("by_unsynced", ["instanceId", "synced"]),

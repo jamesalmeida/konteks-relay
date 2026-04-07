@@ -8,8 +8,15 @@ export const sendFromApp = mutation({
     sessionKey: v.string(),
     content: v.string(),
     deviceId: v.string(),
+    attachments: v.optional(v.array(v.object({
+      type: v.string(),
+      storageId: v.string(),
+      mimeType: v.string(),
+      filename: v.string(),
+      url: v.optional(v.string()),
+    }))),
   },
-  handler: async (ctx, { instanceId, sessionKey, content, deviceId }) => {
+  handler: async (ctx, { instanceId, sessionKey, content, deviceId, attachments }) => {
     // Verify device is paired to this instance
     const device = await ctx.db
       .query("devices")
@@ -28,6 +35,7 @@ export const sendFromApp = mutation({
       timestamp: Date.now(),
       source: "konteks",
       synced: false,
+      attachments,
     });
 
     // Update session preview

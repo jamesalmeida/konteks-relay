@@ -516,8 +516,20 @@ class Relay {
 
     const idempotencyKey = typeof message?._id === "string" ? message._id : randomUUID();
 
+    // Build payload with optional attachments
+    const payload = { sessionKey, message: content, idempotencyKey };
+    if (message?.attachments && Array.isArray(message.attachments) && message.attachments.length > 0) {
+      payload.attachments = message.attachments.map(att => ({
+        type: att.type ?? "image",
+        url: att.url,
+        storageId: att.storageId,
+        mimeType: att.mimeType,
+        filename: att.filename,
+      }));
+    }
+
     const attempts = [
-      { method: "chat.send", payload: { sessionKey, message: content, idempotencyKey } },
+      { method: "chat.send", payload },
     ];
 
     for (const attempt of attempts) {
