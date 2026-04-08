@@ -1,0 +1,123 @@
+🌙 Nightly Build PR Dashboard
+=============================
+Generated: Wed Apr  8 02:06:16 PDT 2026
+
+📁 jamesalmeida/konteks-ios
+   https://github.com/jamesalmeida/konteks-ios
+   ✅ #60: feat: automated issue triage bot
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/60
+   ✅ #59: feat: Add 60s response timeout with error state...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/59
+   ✅ #58: feat: Add account deletion to Settings (Issue #37)
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/58
+   ✅ #57: fix: remove subscription tier from settings and...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/57
+   ✅ #56: feat: Pull-to-refresh and auto-scroll in chat v...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/56
+   ✅ #55: feat: Relative timestamp formatting in chat lis...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/55
+   ✅ #54: feat: Filter system sessions and show human-rea...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/54
+   ✅ #53: feat: Show agent name + emoji in chat list and ...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/53
+   ✅ #52: feat: Markdown rendering in chat messages (Issu...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/52
+   ✅ #51: feat: markdown rendering in assistant chat mess...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/51
+   ✅ #50: feat: relative timestamp formatting in chat lis...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/50
+   ✅ #49: feat: Remove Supabase auth gate for OpenClaw ch...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/49
+   ⚠️ #33: fix: resilient login — profile decode errors ...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/33
+   ✅ #32: feat: Add interactive widgets (target setup req...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/32
+   ⚠️ #31: feat: Add Google Calendar sync UI - issue #5
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/31
+   ✅ #30: feat: Add Shortcuts support (App Intents) - iss...
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/30
+   ✅ #29: feat: Add recurring tasks support - issue #3
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/29
+   ⚠️ #28: feat: Add push notifications support - issue #2
+      ↳ https://github.com/jamesalmeida/konteks-ios/pull/28
+
+📁 jamesalmeida/konteks-web
+   https://github.com/jamesalmeida/konteks-web
+   ✅ #121: feat: add vitest testing infrastructure with in...
+      ↳ https://github.com/jamesalmeida/konteks-web/pull/121
+
+📁 jamesalmeida/konteks-relay
+   https://github.com/jamesalmeida/konteks-relay
+   ✅ #3: fix: normalize session keys bidirectionally (Is...
+      ↳ https://github.com/jamesalmeida/konteks-relay/pull/3
+   ✅ #2: feat: Sync thinking/reasoning messages to FastC...
+      ↳ https://github.com/jamesalmeida/konteks-relay/pull/2
+
+📁 jamesalmeida/konteks
+   https://github.com/jamesalmeida/konteks-ios
+   ✅ #60: feat: automated issue triage bot
+      ↳ https://github.com/jamesalmeida/konteks/pull/60
+   ✅ #59: feat: Add 60s response timeout with error state...
+      ↳ https://github.com/jamesalmeida/konteks/pull/59
+   ✅ #58: feat: Add account deletion to Settings (Issue #37)
+      ↳ https://github.com/jamesalmeida/konteks/pull/58
+   ✅ #57: fix: remove subscription tier from settings and...
+      ↳ https://github.com/jamesalmeida/konteks/pull/57
+   ✅ #56: feat: Pull-to-refresh and auto-scroll in chat v...
+      ↳ https://github.com/jamesalmeida/konteks/pull/56
+   ✅ #55: feat: Relative timestamp formatting in chat lis...
+      ↳ https://github.com/jamesalmeida/konteks/pull/55
+   ✅ #54: feat: Filter system sessions and show human-rea...
+      ↳ https://github.com/jamesalmeida/konteks/pull/54
+   ✅ #53: feat: Show agent name + emoji in chat list and ...
+      ↳ https://github.com/jamesalmeida/konteks/pull/53
+   ✅ #52: feat: Markdown rendering in chat messages (Issu...
+      ↳ https://github.com/jamesalmeida/konteks/pull/52
+   ✅ #51: feat: markdown rendering in assistant chat mess...
+      ↳ https://github.com/jamesalmeida/konteks/pull/51
+   ✅ #50: feat: relative timestamp formatting in chat lis...
+      ↳ https://github.com/jamesalmeida/konteks/pull/50
+   ✅ #49: feat: Remove Supabase auth gate for OpenClaw ch...
+      ↳ https://github.com/jamesalmeida/konteks/pull/49
+   ⚠️ #33: fix: resilient login — profile decode errors ...
+      ↳ https://github.com/jamesalmeida/konteks/pull/33
+   ✅ #32: feat: Add interactive widgets (target setup req...
+      ↳ https://github.com/jamesalmeida/konteks/pull/32
+   ⚠️ #31: feat: Add Google Calendar sync UI - issue #5
+      ↳ https://github.com/jamesalmeida/konteks/pull/31
+   ✅ #30: feat: Add Shortcuts support (App Intents) - iss...
+      ↳ https://github.com/jamesalmeida/konteks/pull/30
+   ✅ #29: feat: Add recurring tasks support - issue #3
+      ↳ https://github.com/jamesalmeida/konteks/pull/29
+   ⚠️ #28: feat: Add push notifications support - issue #2
+      ↳ https://github.com/jamesalmeida/konteks/pull/28
+
+📁 jamesalmeida/fastclaw
+   https://github.com/jamesalmeida/fastclaw
+   ✅ #26: feat: polish chat list view — avatars, clean ...
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/26
+   ✅ #25: feat: Alternate app icon variants with picker
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/25
+   ✅ #24: feat: Multi-instance support
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/24
+   ✅ #23: feat: Settings sync across devices via Convex
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/23
+   ✅ #22: Add voice input with Whisper transcription
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/22
+   ✅ #21: Offline message queue
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/21
+   ✅ #20: feat: session management — rename, archive, b...
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/20
+   ✅ #19: feat: in-chat message search with match navigation
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/19
+   ✅ #18: feat: Push notification infrastructure (APNs)
+      ↳ https://github.com/jamesalmeida/fastclaw/pull/18
+
+=============================
+📊 Summary
+   Total open PRs: 48
+   ✅ Mergeable: 42
+   ⚠️  Has conflicts: 6
+   ⏳  Pending checks: 0
+
+💡 Tip: Run './scripts/update-conflicted-prs.sh' to rebase conflicted PRs

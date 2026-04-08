@@ -38,6 +38,7 @@
 - [ ] **API health dashboard** — Monitor Convex uptime and response times
 
 ### 🔧 DevOps & Tooling
+- [x] **PR backlog dashboard** — Tool to track open PRs across all repos ✅ (2026-04-08, nightly-builds/scripts/)
 - [ ] **Skill usage analytics** — Track which OpenClaw skills get used most
 - [ ] **Session log analytics** — Dashboard for analyzing past sessions
 
