@@ -24,8 +24,8 @@
 
 ### 📱 Konteks iOS
 - [x] **Issue triage bot** — Auto-label new GitHub issues ✅ (2026-04-07, PR #60: https://github.com/jamesalmeida/konteks-ios/pull/60)
+- [x] **Close stale issues** — Auto-close issues marked done but still open in GitHub ✅ (2026-04-09, PR #61: https://github.com/jamesalmeida/konteks-ios/pull/61)
 - [ ] **Multi-gateway support** — Pair with multiple OpenClaw instances and switch between them (#40)
-- [ ] **Close stale issues** — Many issues marked done in BACKLOG but still open in GitHub
 - [ ] **Push notifications** — Notify on new messages when app is backgrounded (#2)
 - [ ] **Shortcuts Support (App Intents)** — Siri shortcuts for common actions (#4)
 - [ ] **Google Calendar Sync** — Two-way sync with Google Calendar (#5)
