@@ -26,14 +26,14 @@
 - [x] **Issue triage bot** — Auto-label new GitHub issues ✅ (2026-04-07, PR #60: https://github.com/jamesalmeida/konteks-ios/pull/60)
 - [x] **Close stale issues** — Auto-close issues marked done but still open in GitHub ✅ (2026-04-09, PR #61: https://github.com/jamesalmeida/konteks-ios/pull/61)
 - [ ] **Multi-gateway support** — Pair with multiple OpenClaw instances and switch between them (#40)
-- [ ] **Push notifications** — Notify on new messages when app is backgrounded (#2)
-- [ ] **Shortcuts Support (App Intents)** — Siri shortcuts for common actions (#4)
+- [x] **Push notifications** — Local notification infrastructure (reminders, settings UI, badge count) ✅ (2026-04-12, PR #63: https://github.com/jamesalmeida/konteks-ios/pull/63)
+- [x] **Shortcuts Support (App Intents)** — Siri shortcuts scaffolding (queue + intents + provider) ✅ (2026-04-11, PR #62: https://github.com/jamesalmeida/konteks-ios/pull/62)
 - [ ] **Google Calendar Sync** — Two-way sync with Google Calendar (#5)
 - [ ] **Recurring Tasks** — Support repeating tasks (#3)
-- [ ] **Interactive Widgets** — Home screen widgets for Inbox, Today, Lists (#1)
+- [x] **Interactive Widgets** — Home screen widgets for Inbox, Today, Lists ✅ (2026-04-14, PR #64: https://github.com/jamesalmeida/konteks-ios/pull/64)
 
 ### 📱 Konteks Web
-- [ ] **Issue triage bot** — Same as iOS repo
+- [x] **Issue triage bot** — Same as iOS repo ✅ (2026-04-10, PR #122: https://github.com/jamesalmeida/konteks-web/pull/122)
 - [ ] **Test infrastructure completion** — PR #121 is open, needs review/merge
 - [ ] **API health dashboard** — Monitor Convex uptime and response times
 
