@@ -30,6 +30,19 @@ function parseJson(text) {
   }
 }
 
+// The gateway prefixes session keys with "agent:main:"
+// The app uses bare keys (e.g. "main", "local-xxx")
+// The relay normalizes bidirectionally
+function toGatewayKey(sessionKey) {
+  if (sessionKey.startsWith("agent:main:")) return sessionKey;
+  return `agent:main:${sessionKey}`;
+}
+
+function toAppKey(sessionKey) {
+  if (sessionKey.startsWith("agent:main:")) return sessionKey.slice("agent:main:".length);
+  return sessionKey;
+}
+
 async function loadConfig() {
   const raw = await fs.readFile(CONFIG_PATH, "utf8");
   const cfg = JSON.parse(raw);
@@ -63,8 +76,9 @@ function extractSessions(payload) {
 
   return list
     .map((session) => {
-      const sessionKey = session?.sessionKey ?? session?.key ?? session?.id;
-      if (!sessionKey || typeof sessionKey !== "string") return null;
+      const rawSessionKey = session?.sessionKey ?? session?.key ?? session?.id;
+      if (!rawSessionKey || typeof rawSessionKey !== "string") return null;
+      const sessionKey = toAppKey(rawSessionKey);
 
       const updatedAt = toNumber(
         session?.updatedAt ?? session?.updated_at ?? session?.lastMessageAt,
@@ -88,7 +102,7 @@ function extractSessions(payload) {
           sessionKey;
 
       // Friendly names for well-known sessions
-      const friendlyTitle = sessionKey === "agent:main:main" ? "Main Chat" : rawTitle;
+      const friendlyTitle = sessionKey === "main" ? "Main Chat" : rawTitle;
 
       return {
         sessionKey,
@@ -363,7 +377,7 @@ class Relay {
       if (evt === "chat") {
         const p = frame?.payload ?? frame;
         const runId = p?.runId;
-        const sessionKey = p?.sessionKey;
+        const sessionKey = typeof p?.sessionKey === "string" ? toAppKey(p.sessionKey) : null;
         if (runId && sessionKey) {
           if (p?.state === "delta" && p?.message) {
             // Track latest accumulated text per runId
@@ -676,7 +690,7 @@ class Relay {
 
   async pushChatEvent(payload) {
     try {
-      const sessionKey = payload?.sessionKey;
+      const sessionKey = typeof payload?.sessionKey === "string" ? toAppKey(payload.sessionKey) : null;
       const msg = payload?.message;
       if (!sessionKey || !msg) return;
 
@@ -720,7 +734,7 @@ class Relay {
         if (!sessionKey) continue;
 
         try {
-          const payload = await conn.request("chat.history", { sessionKey, limit: 50 });
+          const payload = await conn.request("chat.history", { sessionKey: toGatewayKey(sessionKey), limit: 50 });
           const rawMessages = payload?.messages ?? [];
           const messages = [];
 
@@ -755,7 +769,7 @@ class Relay {
             try {
               await this.convex.mutation("messages:pushFromGateway", {
                 instanceId: this.config.instanceId,
-                sessionKey,
+                sessionKey: toAppKey(sessionKey),
                 role: m.role,
                 content: m.content,
                 timestamp: m.timestamp,
@@ -807,7 +821,7 @@ class Relay {
 
     const idempotencyKey = typeof message?._id === "string" ? message._id : randomUUID();
 
-    const payload = { sessionKey, message: content, idempotencyKey };
+    const payload = { sessionKey: toGatewayKey(sessionKey), message: content, idempotencyKey };
 
     // Forward image attachments as base64 for vision model
     if (Array.isArray(message?.attachments) && message.attachments.length > 0) {
@@ -868,16 +882,20 @@ class Relay {
     this.pruneRecentHashes();
 
     for (const msg of messages) {
-      const hash = this.hashGatewayMessage(msg);
+      const normalized = {
+        ...msg,
+        sessionKey: typeof msg.sessionKey === "string" ? toAppKey(msg.sessionKey) : msg.sessionKey,
+      };
+      const hash = this.hashGatewayMessage(normalized);
       if (this.recentGatewayMessageHashes.has(hash)) continue;
 
       try {
         await this.convex.mutation("messages:pushFromGateway", {
           instanceId: this.config.instanceId,
-          sessionKey: msg.sessionKey,
-          role: msg.role,
-          content: msg.content,
-          timestamp: msg.timestamp,
+          sessionKey: normalized.sessionKey,
+          role: normalized.role,
+          content: normalized.content,
+          timestamp: normalized.timestamp,
         });
 
         this.recentGatewayMessageHashes.set(hash, nowMs());
